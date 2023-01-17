@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="general_style.css">
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="signup.css">
+
+</head>
+
+<body style="overflow-x: hidden; position: relative;">
+
+    <div class="login_cont">
+        <img class="logo" src="./assets/mango.svg">
+
+        <div class="input_cont">
+            <div>
+                <label>full name</label>
+                <input type="text" name="">
+            </div>
+
+            <div>
+                <label>email</label>
+                <input type="email" name="">
+            </div>
+
+            <div>
+                <label>password</label>
+                <input type="password" name="">
+            </div>
+
+            <div>
+                <label>retype password</label>
+                <input type="password" name="">
+            </div>
+        </div>
+        
+        <div class="btn_cont">
+            <button class="login_btn">login</button>
+            <span class="seperator">or</span>
+            <button class="signup_btn" onclick="send()">sign up</button>
+        </div>
+
+        <div class="links_cont">
+            <a href="login" class="return_link">back to login</a>
+        </div>
+    </div>
+
+    <div class="ver_cont" style="display: none">
+        <img class="art" src="./assets/pa3.svg">
+        <div class="ver_msg">check your email for a verification link</div>
+        <div class="links_cont">
+            <a href="login" class="return_link">back to login</a>
+            <a href="" class="return_link" style="margin-left: 10px;">resend email</a>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    const login_cont = document.querySelector('.login_cont')
+    const verCont = document.querySelector('.ver_cont')
+
+    function send() {
+        login_cont.style.display = "none";
+        verCont.style.display = "";
+    }
+</script>
+
+</html>

@@ -1,0 +1,203 @@
+/* Animations */
+
+@keyframes slide {
+  0%   {transform: translateX(-10px); opacity: 0;}
+  100% {transform: translateX(0); opacity: 1;}
+}
+
+@keyframes draw {
+  0%   {max-width: 0; opacity: 0;}
+  100% {max-width: 34%; opacity: 1;}
+}
+
+@keyframes reveal {
+  0%   {transform: scale(0.8) perspective(1000px); opacity: 0;}
+  100% {transform: scale(1) perspective(1000px); opacity: 1;}
+}
+
+@keyframes rise {
+  0%   {transform: translateY(30px); opacity: 0;}
+  100% {transform: translateY(0); opacity: 1;}
+}
+
+/* End Animations */
+
+.landing_cont {
+    height: 100vh;
+    position: relative;
+}
+
+.tagline_cont {
+    background: linear-gradient(90deg,#c7cddb,#a7a8c4);
+    background-clip: text;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.tagline {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 70pt;
+    font-weight: 467;
+    line-height: 100%;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+    .tagline {
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        opacity: 0;
+        animation: slide 1s forwards;
+    }
+    .tagline:nth-child(1) {background-image: linear-gradient(90deg,#c7cddb,#a6aac6);}
+    .tagline:nth-child(2) {background-image: linear-gradient(90deg,#c7cddb,#abafcb); animation-delay: 600ms;}
+    .tagline:nth-child(3) {background-image: linear-gradient(90deg,#c7cddb,#9b9cbe); animation-delay: 1200ms;}
+}
+
+
+
+.tagline_mango {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 29pt;
+    font-weight: 467;
+    color: var(--ThemeMangoColor);
+    margin: 0 15px;
+    opacity: 0;
+    animation: reveal 1s 2s ease-out forwards;
+    animation-timing-function: cubic-bezier(.22,.61,.36,1);
+}
+
+.tagline_mango_cont {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.tagline_mango_cont hr {
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 0;
+    height: 4px;
+    margin-top: 3px;
+    background: #d8dae2;
+    animation: draw 1s 2s ease-out forwards;
+    animation-timing-function: cubic-bezier(.22,.61,.36,1);
+}
+
+.art_1, .art_2 {position: absolute; animation: reveal 1s;}
+
+.art_1 {
+    height: 160px;
+    right: -220px;
+    bottom: 110px;
+}
+
+.art_2 {
+    height: 240px;
+    bottom: 49px;
+    left: -25px;
+}
+
+.pricing_cont {
+    text-align: center;
+}
+
+.price_option_cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.pricing_title {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 40pt;
+    color: #9599a7;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #9599a7;
+    text-decoration-thickness: 5px;
+    animation: reveal 700ms forwards;
+}
+
+.price_option {
+    border-radius: 10px;
+    background: white;
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 12pt;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 270px;
+    margin: 0 20px;
+    box-shadow: 4px 7px 20px #b6b8d563;
+    animation: rise 1s forwards;
+    opacity: 0;
+}
+
+.price_option:nth-child(2) {animation-delay: 200ms;}
+.price_option:nth-child(3) {animation-delay: 400ms;}
+
+.price_color {
+    height: 25px;
+    width: 100%;
+}
+
+.price_name {
+    font-size: 22pt;
+    margin: 7px 0;
+}
+
+.price_rate {
+    color: #8c8c8c;
+    font-size: 15pt;
+    margin: 5px 0;
+}
+
+.price_checklist {
+    text-align: left;
+    padding: 0 30px;
+}
+
+.price_checklist div {
+    color: #cdcfd7;
+    font-size: 10pt;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.price_checklist div::before {
+    content: '';
+    margin-right: 22px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    background-image: url('./assets/check.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.price_select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #cecdee;
+    background: none;
+    border: 2px solid #cecdee;
+    border-radius: 10px;
+    padding: 2px 40px;
+    margin: 15px 0 30px 0;
+    transition: 150ms;
+}
+
+.price_select:hover {
+    background: #221bf8;
+    border-color: #221bf8;
+    color: white;
+}

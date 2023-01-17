@@ -1,0 +1,25 @@
+.login_btn, .seperator {display: none;}
+
+.btn_cont {justify-content: center;}
+
+.ver_cont {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.art {
+	height: 90px;
+	margin-bottom: 40px;
+}
+
+.ver_msg {
+	font-family: 'Bahnschrift', sans-serif;
+    font-size: 16pt;
+	color: var(--ThemeAltTextColor);
+}

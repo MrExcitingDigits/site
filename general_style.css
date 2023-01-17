@@ -1,0 +1,124 @@
+:root {
+    --ThemeBgColor: #e8eaf5;
+    --ThemeBtnColor: #301bf9;
+    --ThemeMangoColor: #ffb902;
+    --ThemeTextColor: #9599a7;
+    --ThemeAltTextColor: #8183a0;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing:border-box; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.no-select, img, svg {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('./fonts/Bahnschrift.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./fonts/OpenSans.ttf);
+}
+
+/* End Fonts */
+
+
+/* Correct h tags */
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    font-size: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-left: unset;
+    margin-right: unset;
+    font-weight: unset;
+}
+
+/* End tag correction */
+
+body {
+    padding-bottom: 100px;
+    background: var(--ThemeBgColor);
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.login {
+    padding: 6px 25px;
+    background: linear-gradient(90deg,var(--ThemeBtnColor),#1b16bd);
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 13pt;
+    color: white;
+    transition: padding 200ms;
+    border-radius: 6px;
+}
+
+.login:hover {padding: 6px 30px;}
+
+button {-webkit-appearance: none; appearance: none; outline: none; border: none; cursor: pointer;}
+
+a {text-decoration: none;}
+
+.nav {
+    position: sticky;
+    top: 0;
+    height: 70px;
+    box-shadow: 0 -4px 16px 8px rgba(0,0,0,0.09);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background: var(--ThemeBgColor);
+    z-index: 1;
+}
+
+.logo {
+    height: 40px;
+    display: block;
+    transition: 250ms;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(3deg);
+    filter: drop-shadow(4px 7px 1px #0000001f);
+}
+
+.nav_items {
+    font-family: 'Bahnschrift', sans-serif;
+    color: var(--ThemeTextColor);
+    font-size: 15pt;
+    appearance: none;
+    list-style: none;
+    display: flex;
+    font-weight: 350;
+}
+
+.logo_nav_cont {
+    display: flex;
+    align-items: center;
+}
+
+.nav_items li {
+    margin-left: 30px;
+    transition: opacity 150ms;
+}
+
+.nav_items li:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
