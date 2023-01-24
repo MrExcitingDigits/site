@@ -11,35 +11,46 @@
 <body style="overflow-x: hidden; position: relative;">
 
     <div class="login_cont">
-        <img class="logo" src="./assets/mango.svg">
+        <a href="." class="logo no-grow"><img src="./assets/mango.svg"></a>
 
-        <div class="input_cont">
-            <div>
-                <label>full name</label>
-                <input type="text" name="">
-            </div>
+        <form action="http://api.mymangomail.com/register.php" method="post">
+            <div class="input_cont">
+                <div>
+                    <svg class="warning" aria-hidden="true" focusable="false" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                    <label>full name</label>
+                    <input class="login_text" type="text" name="name" required maxlength="50">
+                </div>
 
-            <div>
-                <label>email</label>
-                <input type="email" name="">
-            </div>
+                <div>
+                    <svg class="warning" aria-hidden="true" focusable="false" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                    <label>email</label>
+                    <input class="login_text" type="email" name="email" required maxlength="255">
+                </div>
 
-            <div>
-                <label>password</label>
-                <input type="password" name="">
-            </div>
+                <div>
+                    <svg class="warning" aria-hidden="true" focusable="false" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                    <label>password</label>
+                    <input class="login_text" placeholder="Minimum 8 of number and letters" type="password" name="password" required pattern="(?=.*[a-zA-Z]{1,})(?=.*\d)(?=.{8,})">
+                </div>
 
-            <div>
-                <label>retype password</label>
-                <input type="password" name="">
+                <div>
+                    <svg class="warning" aria-hidden="true" focusable="false" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                    <label>retype password</label>
+                    <input class="login_text" type="password" name="repassword" required pattern="">
+                </div>
+
+                <label class="tos" style="position: relative;">
+                    <svg class="warning" aria-hidden="true" focusable="false" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                    <input type="checkbox" name="tos" required>
+                    <div class="checkbox"></div>
+                    <span>I agree to the <a href="https://mymangomail.com/policy" target="_blank">Terms of Service</a>.</span>
+                </label>
             </div>
-        </div>
-        
-        <div class="btn_cont">
-            <button class="login_btn">login</button>
-            <span class="seperator">or</span>
-            <button class="signup_btn" onclick="send()">sign up</button>
-        </div>
+            
+            <div class="btn_cont">
+                <button class="signup_btn" type="submit" onclick="validate()">sign up</button>
+            </div>
+        </form>
 
         <div class="links_cont">
             <a href="login" class="return_link">back to login</a>
@@ -58,11 +69,23 @@
 </body>
 
 <script type="text/javascript">
-    const login_cont = document.querySelector('.login_cont')
+    const loginCont = document.querySelector('.login_cont')
     const verCont = document.querySelector('.ver_cont')
 
+    const name = document.querySelector('input[name="name"]')
+    const email = document.querySelector('input[name="email"]')
+    const pw = document.querySelector('input[name="password"]')
+    const pwConf = document.querySelector('input[name="repassword"]')
+
+    function validate() {
+        if (!name.value) {name.classList.add('invalid');}
+        if (!email.value.includes('@')) {email.classList.add('invalid');}
+        if (!pw.value) {pw.classList.add('invalid');}
+        if (pw.value!=pwConf.value) {pwConf.classList.add('invalid');}
+    }
+
     function send() {
-        login_cont.style.display = "none";
+        loginCont.style.display = "none";
         verCont.style.display = "";
     }
 </script>

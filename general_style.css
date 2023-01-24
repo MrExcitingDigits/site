@@ -51,11 +51,10 @@ h1, h2, h3, h4, h5, h6 {
 /* End tag correction */
 
 body {
-    padding-bottom: 100px;
+    padding-bottom: 000px;
     background: var(--ThemeBgColor);
     position: relative;
     min-height: 100vh;
-    min-width: 100vw;
 }
 
 .login {
@@ -72,31 +71,39 @@ body {
 
 button {-webkit-appearance: none; appearance: none; outline: none; border: none; cursor: pointer;}
 
-a {text-decoration: none;}
+a {text-decoration: none; cursor: pointer;}
 
 .nav {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     height: 70px;
-    box-shadow: 0 -4px 16px 8px rgba(0,0,0,0.09);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
     background: var(--ThemeBgColor);
     z-index: 1;
+    transition: box-shadow 300ms;
 }
 
-.logo {
-    height: 40px;
-    display: block;
-    transition: 250ms;
+.nav.scrolled {
+    box-shadow: 0 -4px 16px 8px rgba(0,0,0,0.09);
 }
+
+.logo {transition: 250ms;}
 
 .logo:hover {
     transform: scale(1.1) rotate(3deg);
     filter: drop-shadow(4px 7px 1px #0000001f);
 }
+
+.logo img {
+    height: 40px;
+    display: block;
+}
+
+.no-grow:hover {transform: unset; filter: unset;}
 
 .nav_items {
     font-family: 'Bahnschrift', sans-serif;
@@ -113,12 +120,11 @@ a {text-decoration: none;}
     align-items: center;
 }
 
-.nav_items li {
-    margin-left: 30px;
-    transition: opacity 150ms;
+.nav_items li {margin-left: 30px;}
+
+.nav_items a {
+    color: var(--ThemeTextColor);
+    transition: 200ms;
 }
 
-.nav_items li:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
+.nav_items a:hover {color: #ffb300; transform: scale(1.1);}

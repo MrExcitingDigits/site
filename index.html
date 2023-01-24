@@ -2,6 +2,9 @@
 <html>
 <head>
 
+
+<title>Mango Mail - Email Hosting</title>
+<link rel="icon" type="image/x-icon" href="assets/fav.ico">
 <link rel="stylesheet" href="general_style.css">
 <link rel="stylesheet" media="screen and (max-width: 800px)" href="general_style.mobile.css">
 <link rel="stylesheet" href="index.css">
@@ -13,15 +16,18 @@
 
     <div id="nav" class="nav">
         <div class="logo_nav_cont">
-            <a href="."><img class="logo" src="./assets/mango.svg"></a>
+            <a href="." class="logo"><img src="./assets/mango.svg"></a>
             <ul class="nav_items">
-                <li>faq</li>
-                <li>pricing</li>
-                <li>support</li>
+                <li><a href="faq">faq</a></li>
+                <li><a href="pricing">pricing</a></li>
+                <li><a href="policy">policy</a></li>
+                <li><a href="support">support</a></li>
             </ul>
         </div>
-        <button class="login">login/signup</button>
+        <a href="login" class="login">login/signup</a>
     </div>
+
+    <script type="text/javascript" src="nav.js"></script>
 
     <div class="landing_cont">
         <div class="tagline_cont">
@@ -37,11 +43,11 @@
     </div>
     
     <div class="pricing_cont">
-        <div class="pricing_title">pricing</div>
+        <div class="pricing_title animate_observer">pricing</div>
 
         <div class="price_option_cont">
 
-            <div class="price_option">
+            <div class="price_option animate_observer">
                 <div class="price_color" style="background-image: linear-gradient(90deg,#0ecbff,#4662ff);"></div>
                 <div class="price_name" style="color: #3386ff;">startup</div>
                 <div class="price_rate">$1.50/mo</div>
@@ -57,7 +63,7 @@
                 <button class="price_select">select</button>
             </div>
 
-            <div class="price_option">
+            <div class="price_option animate_observer">
                 <div class="price_color" style="background-image: linear-gradient(90deg,#47519c,#6771e4);"></div>
                 <div class="price_name" style="color: #5f69d1;">small business</div>
                 <div class="price_rate">$7.50/mo</div>
@@ -73,7 +79,7 @@
                 <button class="price_select">select</button>
             </div>
 
-            <div class="price_option">
+            <div class="price_option animate_observer">
                 <div class="price_color" style="background-image: linear-gradient(90deg,#263b4c,#4f7c9f);"></div>
                 <div class="price_name" style="color: #4c7799;">mini tycoon</div>
                 <div class="price_rate">$24/mo</div>
@@ -97,5 +103,7 @@
 
 <script type="text/javascript">
 </script>
+
+<script type="text/javascript" src="observer.js"></script>
 
 </html>

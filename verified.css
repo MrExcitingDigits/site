@@ -1,0 +1,31 @@
+body {
+	overflow-x: hidden;
+	position: relative;
+}
+
+.login_cont {
+	text-align: center;
+	width: 380px;
+	padding: 10px 40px 30px 40px;
+}
+
+.login_cont svg {
+	fill: #30e64e;
+	margin: 45px 0;
+}
+
+.main_text {
+	color: #30e64e;
+	font-size: 17pt;
+}
+
+.main_text p {
+	font-size: 0.75em;
+}
+
+.sub_text {
+	color: #cccddd;
+	font-size: 9pt;
+	margin-top: 35px;
+	line-height: 17pt;
+}

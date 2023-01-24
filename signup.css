@@ -23,3 +23,29 @@
     font-size: 16pt;
 	color: var(--ThemeAltTextColor);
 }
+
+
+.tos span {font-size: 12pt;}
+.tos input {display: none;}
+.tos input:checked ~ .checkbox {background: #2e76ff;}
+.tos a {text-decoration: underline; text-underline-offset: 2px;}
+
+.tos {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.checkbox {
+    background: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    background: #e8e8e8;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.checkbox:hover {
+	background: #cacaca;
+}
